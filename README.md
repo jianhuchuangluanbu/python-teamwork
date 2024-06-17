@@ -1,7 +1,7 @@
 # python-teamwork
 一个期末大作业
     
-详情请查看md目录
+## 详情请查看md目录！！
 nltk1使用NLTK 中的 nltk.corpus 模块。
 nltk2使用NLTK中的nltk.tokenize模块。
 Program.ipynb是一个强安分析实例。
