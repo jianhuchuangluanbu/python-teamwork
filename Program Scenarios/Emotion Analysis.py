@@ -45,9 +45,9 @@ vocab = list(freq_dist.keys())  # 将词汇列表转换为一个普通的Python�
 
 # vocab即为经过处理得到的模型特征的基础词汇表
 
-
+# 提取特征
 def extract_features(tokens):
-    features = {}
+    features = {}   # 创建特征字典
     token_set = set(tokens)
     for word in vocab:
         features[word] = (word in token_set)
@@ -63,11 +63,15 @@ negative_labels = [(feature, 'negative') for feature in negative_features]
 
 # 合并数据并拆分训练集和测试集
 dataset = positive_labels + negative_labels
-train_data, test_data = train_test_split(dataset, test_size=0.25)
+train_data, test_data = train_test_split(dataset, test_size=0.25)   # 25%作为测试集，75%作为训练集
 
 # 训练模型
 model = NaiveBayesClassifier.train(train_data)
 
 # 评估模型
-print(f"Accuracy: {nltk_accuracy(model, test_data):.2f}")
-model.show_most_informative_features(10)
+print(f"Accuracy: {nltk_accuracy(model, test_data):.2f}")   # 输出测试集准确率
+model.show_most_informative_features(10)    # 显示最具信息性的特征（前10个）
+
+
+'''
+'''
